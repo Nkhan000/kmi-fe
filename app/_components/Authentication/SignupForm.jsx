@@ -1,22 +1,28 @@
 "use client";
-
 import { FcGoogle } from "react-icons/fc";
 import Button from "../Button";
 import LogoWithName from "../LogoWithName";
-
-export default function LoginForm({ handleLoginState }) {
+export default function SignupForm({ handleLoginState }) {
   return (
-    <div className="flex flex-col items-center justify-between py-16 gap-3 ">
+    <div className="flex flex-col items-center justify-between py-16 gap-3">
       <LogoWithName size="md" />
       <div className="flex flex-col items-center">
-        <h1 className="text-4xl font-semibold text-primary-700">
-          Welcome Back 😊
+        <h1 className="text-4xl font-semibold text-primary-700 capitalize">
+          let's get started 😊
         </h1>
         <span className="text-xs text-primary-700">
           Enter details to continue &#10140;
         </span>
       </div>
       <form className="min-w-full p-4 flex flex-col gap-4">
+        <div className="flex flex-col gap-2">
+          <input
+            id="fullname"
+            type="text"
+            placeholder="Full name"
+            className="text-primary-800 placeholder:text-primary-500 border-2 px-4 py-2 border-green-100 rounded-md outline-green-100 active:outline-green-300 focus:outline-green-300"
+          />
+        </div>
         <div className="flex flex-col gap-2">
           <input
             id="email"
@@ -35,17 +41,17 @@ export default function LoginForm({ handleLoginState }) {
         </div>
 
         <div className="self-center">
-          <Button>Login</Button>
+          <Button>Signup</Button>
         </div>
       </form>
 
       <div className="flex gap-2 items-center">
-        <span className="text-primary-500">Don't have an account ?</span>
+        <span className="text-primary-500">Already have an account ?</span>
         <button
           className="text-primary-950 hover:text-green-500 ease-in duration-150"
           onClick={handleLoginState}
         >
-          Create Account{" "}
+          Login
         </button>
       </div>
 

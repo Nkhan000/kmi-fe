@@ -1,7 +1,7 @@
 function Button({ type = "primary", children }) {
   if (type === "primary")
     return (
-      <button className="bg-green-400 ease-in duration-200 px-16 py-4 rounded-md text-white text-xl font-semibold hover:bg-green-200 hover:text-primary-900 transition-all outline-gray-400 outline-offset-4">
+      <button className="bg-green-400 ease-in duration-200 px-8 py-2 rounded-md text-white text-xl font-semibold hover:bg-green-200 hover:text-primary-900 transition-all outline-gray-400 outline-offset-4">
         {children}
       </button>
     );
