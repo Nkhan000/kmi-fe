@@ -21,7 +21,7 @@ export default function ExpandableGrid({ data }) {
         <div
           key={index}
           onClick={() => setExpandedIndex(index)}
-          className="h-full relative bg-gradient-to-br from-green-400 to-green-600 rounded-lg flex flex-col justify-center cursor-pointer border-8 border-green-200 overflow-hidden"
+          className="h-full relative rounded-lg flex flex-col justify-center cursor-pointer border-8 border-green-200 overflow-hidden"
         >
           <div className="min-h-full">
             <div className="min-h-full flex">

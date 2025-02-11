@@ -5,7 +5,7 @@ import HeroFloatingImgs from "./HeroFloatingImgs";
 
 function Hero() {
   return (
-    <section className="relative z-10 px-20 py-12 flex flex-col gap-8 items-center bg-[linear-gradient(180deg,_rgba(246,255,245,1)_0%,_rgba(195,255,198,0.63)_35%,_rgba(195,255,198,0.63)_100%)] bottom-[2px]">
+    <section className="relative z-10 px-20 py-12 flex flex-col gap-8 items-center bg-brand-gradient-01 bottom-[2px]">
       <div className="flex flex-col items-center gap-1">
         <h1 className="text-8xl text-primary-900 tracking-tight font-normal">
           Verify Once

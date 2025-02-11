@@ -6,6 +6,13 @@ export const content = [
 ];
 export const theme = {
   extend: {
+    backgroundImage: {
+      "brand-gradient-01":
+        "linear-gradient(180deg, rgba(246,255,245,1) 0%, rgba(195,255,198,0.70) 35%, rgba(195,255,198,0.63) 100%)",
+      "brand-gradient-02":
+        "linear-gradient(0deg, rgba(246,255,245,1) 0%, rgba(195,255,198,0.63) 35%, rgba(195,255,198,0.63) 100%)",
+      "brand-gradient-03": "linear-gradient(to bottom right, #4ade80, #16a340)",
+    },
     colors: {
       primary: {
         50: "#E1E8EF",
