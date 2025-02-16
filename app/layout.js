@@ -34,7 +34,6 @@ export default function RootLayout({ children }) {
         <div className="flex-1 grid ">
           <main className="overflow-y-hidden">{children}</main>
         </div>
-        <Footer />
       </body>
     </html>
   );

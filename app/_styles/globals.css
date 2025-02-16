@@ -7,6 +7,17 @@
   --brand-gradient :linear-gradient(184deg, rgba(246,255,245,1) 0%, rgba(195,255,198,0.633578431372549) 35%, rgba(255,255,255,1) 100%);
 }
 
+@layer utilities {
+  .no-scroll::-webkit-scrollbar{
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style : none;
+    scrollbar-width: none;
+  }
+}
+
 /*
 @layer components {
   .spinner {

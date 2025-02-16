@@ -3,6 +3,7 @@ import HowItWorks from "@/app/_components/Home/HowItWorks";
 import WhoWeAre from "@/app/_components/Home/WhoWeAre";
 import OurSolutions from "./_components/Home/OurSolutions";
 import JoinUs from "./_components/Home/JoinUs";
+import Footer from "./_components/Footer";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <HowItWorks />
       <OurSolutions />
       <JoinUs />
+      <Footer />
     </main>
   );
 }

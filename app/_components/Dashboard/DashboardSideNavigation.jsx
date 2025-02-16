@@ -1,7 +1,6 @@
 export default function DashboardSideNavigation() {
   const links = [
-    { href: "/", label: "profile" },
-    { href: "/", label: "Usage Overview" },
+    { href: "/", label: "overview" },
     { href: "/", label: "Add Documents" },
     { href: "/", label: "Update Settings" },
     { href: "/", label: "Feedback & Support" },
