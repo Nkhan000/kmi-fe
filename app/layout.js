@@ -20,8 +20,8 @@ const outfit = Outfit({
 
 export const metadata = {
   title: {
-    template: "%s | Scholarships Portal",
-    default: "Welcome | The Scholarship portal",
+    template: "%s | KMI Portal",
+    default: "Welcome | Know My Identity",
   },
 };
 export default function RootLayout({ children }) {
