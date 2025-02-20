@@ -4,7 +4,7 @@ import NavigationMenu from "./NavigationMenu";
 
 function Header() {
   return (
-    <header className="z-50 sticky top-0 px-4 py-2 backdrop-saturate-180 backdrop-blur-md  ">
+    <header className="z-50 sticky top-0 px-1 py-2 backdrop-saturate-180 backdrop-blur-md  ">
       <div className="flex justify-between items-center max-w-7xl mx-auto">
         <Logo />
         <NavigationMenu />

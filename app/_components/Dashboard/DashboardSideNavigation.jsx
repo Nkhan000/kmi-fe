@@ -15,7 +15,7 @@ export default function DashboardSideNavigation() {
   const links = [
     { param: "overview", label: "overview" },
     { param: "shared-informations", label: "Shared informations" },
-    { param: "user-settings", label: "User Settings" },
+    { param: "user-verification", label: "User Verification" },
     { param: "feedback-and-support", label: "Feedback & Support" },
     { param: "logout", label: "logout" },
   ];

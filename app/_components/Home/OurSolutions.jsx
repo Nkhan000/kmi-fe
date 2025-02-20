@@ -6,6 +6,7 @@ import { SiTicktick } from "react-icons/si";
 import AnimatedText from "../Animations/AnimatedText";
 import AnimatedFadeIn from "../Animations/AnimatedFadeIn";
 import Button from "../Button";
+import IndividiualSolution from "./IndividualSolutions";
 
 function OurSolutions() {
   const data = [
@@ -35,12 +36,25 @@ function OurSolutions() {
     },
   ];
   return (
-    <section className="min-h-screen px-20 py-12 flex flex-col gap-20 bg-brand-gradient-01 bottom-[2px]">
+    <section className="min-h-screen px-20 py-12 flex flex-col gap-14 bottom-[2px]">
       <SectionHead
         mainHead="our solutions"
-        subHead="Get high qualities solutions for both personal and business requirements"
+        subHead="Get high qualities solutions for all of your personal requirements"
       />
-      <AnimatedFadeIn>
+      <IndividiualSolution />
+
+      <div className="max-w-fit self-center">
+        <Button>Gets Started</Button>
+      </div>
+    </section>
+  );
+}
+
+export default OurSolutions;
+
+/*
+
+ {/* <AnimatedFadeIn>
         <div className="min-h-[30rem] max-h-[55rem] grid grid-cols-2 gap-10">
           {data.map(({ title, solutionsList, icon }, index) => (
             <div
@@ -75,13 +89,4 @@ function OurSolutions() {
             </div>
           ))}
         </div>
-      </AnimatedFadeIn>
-
-      <div className="max-w-fit self-center">
-        <Button>Gets Started</Button>
-      </div>
-    </section>
-  );
-}
-
-export default OurSolutions;
+      </AnimatedFadeIn> */

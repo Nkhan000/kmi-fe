@@ -6,6 +6,7 @@ import DashboardSideNavigation from "../_components/Dashboard/DashboardSideNavig
 import ProfileOverview from "@/app/_components/Dashboard/Overview/ProfileOverview";
 import { useEffect } from "react";
 import SharedInformationTable from "../_components/Dashboard/Shared Information/SharedInformationTable";
+import UserVerification from "../_components/Dashboard/User Verification/UserVerification";
 
 export default function Dashboard() {
   const searchParams = useSearchParams();
@@ -31,6 +32,9 @@ export default function Dashboard() {
           {searchParams.get("field") == "overview" && <ProfileOverview />}
           {searchParams.get("field") == "shared-informations" && (
             <SharedInformationTable />
+          )}
+          {searchParams.get("field") == "user-verification" && (
+            <UserVerification />
           )}
         </div>
       </div>
