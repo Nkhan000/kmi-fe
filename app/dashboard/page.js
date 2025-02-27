@@ -16,12 +16,15 @@ export default function Dashboard() {
   }, [searchParams, router]);
 
   return (
-    <main className="min-h-screen grid grid-cols-[20rem_1fr]" role="main">
-      <aside role="complementary">
+    <main
+      className="overflow-y-scroll max-h-screen grid grid-cols-[20rem_1fr]"
+      role="main"
+    >
+      <aside className="relative h-full" role="complementary">
         <DashboardSideNavigation />
       </aside>
-      <div>
-        <div className="max-h-svh bg-white py-6 px-10 flex flex-col gap-4">
+      <div className="">
+        <div className="max-h-full bg-white py-6 px-10 flex flex-col gap-4">
           <div className="min-w-full h-16 flex justify-between items-center">
             <span className="inline-block text-5xl font-semibold text-primary-800 capitalize">
               {searchParams.get("field")?.split("-").join(" ")}

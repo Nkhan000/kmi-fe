@@ -14,7 +14,7 @@ export default function IndividiualSolution() {
             />
           </div>
           <div className="min-w-full bg-white min-h-full absolute top-[55%] rounded-tr-3xl rounded-tl-3xl overflow-hidden hover:top-0 hover:rounded-tr-none hover:rounded-tl-none ease-in duration-300">
-            <div>test</div>
+            <div></div>
           </div>
         </div>
 

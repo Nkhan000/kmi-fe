@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${josefin.className} ${outfit.className}  text-primary-100 min-h-screen `}
       >
-        <Header />
+        {/* <Header /> */}
         <div className="flex-1 grid ">
           <main className="overflow-y-hidden">{children}</main>
         </div>
