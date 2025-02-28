@@ -10,7 +10,9 @@ export default function StyledTag({ type = "verified", children }) {
     <div
       className={`relative py-1 px-4 flex items-center justify-center rounded-2xl border ${typeObj[type][0]}`}
     >
-      <span className={`text-xs ${typeObj[type][1]}`}>{children}</span>
+      <span className={`capitalize text-xs ${typeObj[type][1]}`}>
+        {children}
+      </span>
     </div>
   );
 }
