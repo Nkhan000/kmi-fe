@@ -59,7 +59,7 @@ export default function SharedInformationTable() {
   ];
 
   return (
-    <section className="max-h-svh flex flex-col gap-6">
+    <section className="max-h-full flex flex-col gap-6">
       <form className="self-end flex items-stretch gap-4 ">
         <input
           name="search-name"
@@ -70,7 +70,7 @@ export default function SharedInformationTable() {
         <Button size="sm">Search</Button>
       </form>
 
-      <div className="max-h-svh rounded-lg overflow-y-scroll no-scrollbar border border-primary-50">
+      <div className="max-h-full rounded-lg  border border-primary-50">
         <div className="bg-primary-50 grid grid-cols-[30rem_1fr_1fr] px-8 py-4">
           <span className="text-primary-800 font-semibold text-lg">
             Name of Company

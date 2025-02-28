@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function LogoWithName({
   size = "lg",
   logoColor = "dark",
-  content = "Dashboard",
+  content,
 }) {
   const imgHeight =
     size === "lg"
@@ -27,13 +27,17 @@ export default function LogoWithName({
         />
       </Link>
 
-      <div className="border-l-2 pl-4 border-l-primary-950">
+      <div
+        className={`border-l-2 pl-4 border-l-primary-${
+          logoColor == "white" ? "50" : "900"
+        }`}
+      >
         <h2
-          className={`text-${
-            size == "lg" ? "3xl" : "xl"
-          } text-primary-900 font-semibold uppercase`}
+          className={`text-${size == "lg" ? "3xl" : "xl"}  text-${
+            logoColor == "white" ? "white" : "primary-900"
+          } font-semibold uppercase`}
         >
-          {content ? `${content}` : "Know my identity &reg;"}
+          {content ? `${content}` : "Know my identity"}
         </h2>
         {!content && (
           <span className="text-md text-primary-950">
