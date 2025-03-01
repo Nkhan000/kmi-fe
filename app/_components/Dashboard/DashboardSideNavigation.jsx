@@ -29,7 +29,7 @@ export default function DashboardSideNavigation() {
     },
     {
       param: "user-verification",
-      label: "Verifications",
+      label: "Verifications / status",
       icon: <VscVerifiedFilled />,
     },
     {
