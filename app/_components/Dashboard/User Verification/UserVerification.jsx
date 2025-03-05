@@ -8,6 +8,9 @@ import { useEffect } from "react";
 import { LuLogs } from "react-icons/lu";
 import ProfileStatus from "./ProfileStatus";
 import VerificationRequest from "./VerificationRequest";
+import VerificationLogs from "./VerificationLogs";
+// import VerificationLogs from "./verificationLogs";
+// import VerificationLogs from "./VerificationLogs";
 
 export default function UserVerification() {
   const searchParams = useSearchParams();
@@ -77,6 +80,9 @@ export default function UserVerification() {
         )}
         {searchParams.get("verification-tab") === "verification-requests" && (
           <VerificationRequest />
+        )}
+        {searchParams.get("verification-tab") === "verification-logs" && (
+          <VerificationLogs />
         )}
       </div>
     </section>

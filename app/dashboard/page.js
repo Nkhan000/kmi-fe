@@ -4,16 +4,39 @@ import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import DashboardSideNavigation from "../_components/Dashboard/DashboardSideNavigation";
 import ProfileOverview from "@/app/_components/Dashboard/Overview/ProfileOverview";
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import SharedInformationTable from "../_components/Dashboard/Shared Information/SharedInformationTable";
 import UserVerification from "../_components/Dashboard/User Verification/UserVerification";
+import NewApplication from "../_components/Dashboard/New Application/NewApplication";
 
 export default function Dashboard() {
   const searchParams = useSearchParams();
   const router = useRouter();
+  const currField = searchParams.get("field");
+
+  function checkCurrField(currParam) {
+    const includedFields = [
+      "overview",
+      "new-application",
+      "shared-informations",
+      "user-verification",
+      "feedback-and-support",
+      "logout",
+    ];
+    return includedFields.includes(currParam);
+  }
+
   useEffect(() => {
-    if (!searchParams.get("field")) router.replace("/dashboard?field=overview");
-  }, [searchParams, router]);
+    if (!currField) {
+      router.replace("/dashboard?field=overview");
+      return;
+    }
+
+    if (currField && !checkCurrField(currField)) {
+      router.replace("/error");
+      return;
+    }
+  }, [currField, router]);
 
   return (
     <main
@@ -32,13 +55,10 @@ export default function Dashboard() {
           </div>
         </div>
         <div className="px-10">
-          {searchParams.get("field") == "overview" && <ProfileOverview />}
-          {searchParams.get("field") == "shared-informations" && (
-            <SharedInformationTable />
-          )}
-          {searchParams.get("field") == "user-verification" && (
-            <UserVerification />
-          )}
+          {currField == "overview" && <ProfileOverview />}
+          {currField == "shared-informations" && <SharedInformationTable />}
+          {currField == "user-verification" && <UserVerification />}
+          {currField == "new-application" && <NewApplication />}
         </div>
       </div>
     </main>

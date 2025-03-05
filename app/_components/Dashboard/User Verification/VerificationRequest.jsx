@@ -42,10 +42,13 @@ const data = [
 ];
 export default function VerificationRequest() {
   return (
-    <ul className="grid grid-cols-1 gap-4 p-4">
-      {data.map(({ name, purpose, requestedOn, details }, idx) => (
-        <AnimatedFadeIn key={idx}>
-          <li className="border border-green-200 rounded-lg p-4 flex items-center justify-between ease-in-out duration-200 hover:-translate-y-1 hover:bg-neutral-100">
+    <AnimatedFadeIn>
+      <ul className="grid grid-cols-1 gap-4 p-4">
+        {data.map(({ name, purpose, requestedOn, details }, idx) => (
+          <li
+            key={idx}
+            className="border border-green-200 rounded-lg p-4 flex items-center justify-between ease-in-out duration-200 hover:-translate-y-1 hover:bg-neutral-100"
+          >
             <div className="flex flex-col">
               <span className="text-[0.65rem] text-primary-300 italic">
                 {Date(requestedOn)}
@@ -70,9 +73,9 @@ export default function VerificationRequest() {
               </Button>
             </div>
           </li>
-        </AnimatedFadeIn>
-      ))}
-    </ul>
+        ))}
+      </ul>
+    </AnimatedFadeIn>
   );
 }
 

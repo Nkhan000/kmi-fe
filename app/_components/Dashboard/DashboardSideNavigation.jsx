@@ -9,6 +9,7 @@ import { TbShare } from "react-icons/tb";
 import { VscVerifiedFilled } from "react-icons/vsc";
 import { BiSupport } from "react-icons/bi";
 import { TbLogout } from "react-icons/tb";
+import { FiPlusCircle } from "react-icons/fi";
 
 export default function DashboardSideNavigation() {
   const searchParams = useSearchParams();
@@ -22,6 +23,11 @@ export default function DashboardSideNavigation() {
 
   const links = [
     { param: "overview", label: "overview", icon: <GrOverview /> },
+    {
+      param: "new-application",
+      label: "New Application",
+      icon: <FiPlusCircle />,
+    },
     {
       param: "shared-informations",
       label: "Shared informations",
@@ -40,32 +46,33 @@ export default function DashboardSideNavigation() {
     { param: "logout", label: "logout", icon: <TbLogout /> },
   ];
   return (
-    <div className="min-h-screen max-h-screen top-0 sticky grid py-6 px-3">
-      <div className="min-h-full bg-primary-900 rounded-lg">
-        <div>
-          <LogoWithName logoColor="white" size="md" content="dashboard" />
-        </div>
-
-        <ul className="flex flex-col gap-3 py-4 px-2">
-          {links.map(({ label, param, icon }, idx) => (
-            <li key={idx} onClick={() => handleParamChange(param)}>
-              <Link
-                href="/"
-                className={`min-w-full flex items-center gap-4 px-4 py-2 rounded-lg ease-out duration-200  ${
-                  searchParams.get("field") == param
-                    ? " text-primary-50 bg-green-500 shadow-sm "
-                    : "hover:bg-primary-800"
-                } `}
-              >
-                <svg className="flex items-center h-5 w-5 text-xl text-white">
-                  {icon}
-                </svg>
-                <div className="text-lg capitalize">{label}</div>
-              </Link>
-            </li>
-          ))}
-        </ul>
+    // <nav className="min-h-screen max-h-screen top-0 sticky grid py-6 px-3">
+    // <div className="min-h-full bg-primary-900 rounded-lg">
+    <nav className="min-h-screen max-h-screen top-0 sticky py-6 px-3 bg-primary-900 ">
+      <div>
+        <LogoWithName logoColor="white" size="md" content="dashboard" />
       </div>
-    </div>
+
+      <ul className="flex flex-col gap-3 py-4 px-2">
+        {links.map(({ label, param, icon }, idx) => (
+          <li key={idx} onClick={() => handleParamChange(param)}>
+            <Link
+              href="/"
+              className={`min-w-full flex items-center gap-4 px-4 py-2 rounded-lg ease-out duration-200  ${
+                searchParams.get("field") == param
+                  ? " text-primary-50 bg-green-500 shadow-sm "
+                  : "hover:bg-primary-800"
+              } `}
+            >
+              <svg className="flex items-center h-5 w-5 text-xl text-white">
+                {icon}
+              </svg>
+              <div className="text-lg capitalize">{label}</div>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
+    // </div>
   );
 }
