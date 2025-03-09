@@ -7,8 +7,10 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import { LuLogs } from "react-icons/lu";
 import ProfileStatus from "./ProfileStatus";
-import VerificationRequest from "./VerificationRequest";
+import VerificationRequests from "./VerificationRequests";
 import VerificationLogs from "./VerificationLogs";
+// import VerificationRequest from "./VerificationLogs";
+// import VerificationLogs from "./VerificationRequests";
 // import VerificationLogs from "./verificationLogs";
 // import VerificationLogs from "./VerificationLogs";
 
@@ -41,23 +43,19 @@ export default function UserVerification() {
       icon: <FaRegUserCircle />,
     },
     {
-      label: "verification requests",
-      param: "verification-requests",
-      icon: <GrStatusGood />,
-    },
-    {
       label: "verification logs",
       param: "verification-logs",
       icon: <LuLogs />,
+    },
+    {
+      label: "verification requests",
+      param: "verification-requests",
+      icon: <GrStatusGood />,
     },
   ];
 
   return (
     <section role="section overflow-y-scroll">
-      <div className="flex items-center justify-between">
-        <h2 className="text-primary-800 text-3xl">Profile Status</h2>
-      </div>
-
       <div className="grid gap-4">
         <ul className="flex gap-4 py-2 rounded-lg mt-4">
           {links.map(({ label, param, icon }, idx) => (
@@ -79,7 +77,7 @@ export default function UserVerification() {
           <ProfileStatus />
         )}
         {searchParams.get("verification-tab") === "verification-requests" && (
-          <VerificationRequest />
+          <VerificationRequests />
         )}
         {searchParams.get("verification-tab") === "verification-logs" && (
           <VerificationLogs />

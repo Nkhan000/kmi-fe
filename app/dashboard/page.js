@@ -32,9 +32,8 @@ export default function Dashboard() {
       return;
     }
 
-    if (currField && !checkCurrField(currField)) {
-      router.replace("/error");
-      return;
+    if (!checkCurrField(currField)) {
+      throw new Error("Page could not be found");
     }
   }, [currField, router]);
 
@@ -50,7 +49,8 @@ export default function Dashboard() {
         <div className="max-h-full bg-white py-6 px-10 flex flex-col gap-4">
           <div className="min-w-full h-16 flex justify-between items-center">
             <span className="inline-block text-5xl font-semibold text-primary-800 capitalize">
-              {searchParams.get("field")?.split("-").join(" ")}
+              {checkCurrField(currField) &&
+                searchParams.get("field").split("-").join(" ")}
             </span>
           </div>
         </div>
