@@ -1,96 +1,110 @@
+import Image from "next/image";
 import AnimatedFadeIn from "../../Animations/AnimatedFadeIn";
 import Button from "../../Button";
+import StyledOption from "../../StyledOptions";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useEffect } from "react";
 
 const data = [
   {
     name: "nepal rastriya bank ltd.",
     purpose: "kyc verification",
-    requestedOn: 1740816696893,
+    requestedOn: Date(1741678587979),
     details: {},
   },
   {
     name: "Rastriya banijya bank.",
     purpose: "kyc verification",
-    requestedOn: 1740816696893,
+    requestedOn: Date(1741678587979),
     details: {},
   },
   {
     name: "NEPSE TMS pvt. ltd.",
     purpose: "kyc verification",
-    requestedOn: 1740816696893,
+    requestedOn: Date(1741678587979),
     details: {},
   },
   {
     name: "mero share",
     purpose: "kyc verification",
-    requestedOn: 1740816696893,
+    requestedOn: Date(1741678587979),
     details: {},
   },
   {
     name: "Khalti Mobile App",
     purpose: "kyc verification",
-    requestedOn: 1740816696893,
+    requestedOn: Date(1741678587979),
     details: {},
   },
   {
     name: "Rastriya banijya bank.",
     purpose: "kyc verification",
-    requestedOn: 1740816696893,
+    requestedOn: Date(1741678587979),
     details: {},
   },
 ];
 
 export default function VerificationRequests() {
+  const typeValuesArr = [
+    "all requests",
+    "kyc verification",
+    "employee verification",
+    "business verification",
+  ];
+  const sortbyValuesArr = ["most recent", "least recent"];
+
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const router = useRouter();
+
+  useEffect(() => {
+    const params = new URLSearchParams(searchParams);
+    const typeParam = searchParams.get("type");
+    const sortParam = searchParams.get("sort-by");
+    if (!typeParam || !typeValuesArr.includes(typeParam)) {
+      params.set("type", "all requests");
+    }
+    if (!sortParam || !sortbyValuesArr.includes(sortParam)) {
+      params.set("sort-by", "most recent");
+    }
+
+    router.push(`${pathname}?${params.toString()}`);
+  }, []);
+
   return (
     <div className="flex flex-col gap-3">
       <nav className="flex justify-end gap-4">
-        <div className="flex items-center gap-2 border px-3 pr-0 rounded-md">
-          <label className="text-primary-800 " htmlFor="show">
-            Type :
-          </label>
-          <select
-            className="capitalize px-2 py-1 text-primary-950 font-semibold focus:outline-green-400"
-            id="show"
-            defaultValue="all"
-          >
-            <option value="all">All</option>
-            <option value="kyc verification">KYC verification</option>
-            <option value="employee verification">employee verification</option>
-            <option value="business verification">Business verification</option>
-          </select>
-        </div>
-        <div className="flex items-center gap-2 border px-3 pr-0 rounded-md">
-          <label className="text-primary-800 " htmlFor="recent">
-            Sort By :
-          </label>
-          <select
-            className="px-2 py-1 text-primary-950 font-semibold focus:outline-green-400"
-            id="recent"
-            defaultValue="most-recent"
-          >
-            <option value="most-recent">Most Recent</option>
-            <option value="least-recent">Least Recent</option>
-          </select>
-        </div>
+        <StyledOption name="type" valuesArr={typeValuesArr} />
+        <StyledOption name="sort-by" valuesArr={sortbyValuesArr} />
       </nav>
       <ul className="grid grid-cols-1 gap-4 p-4">
         {data.map(({ name, purpose, requestedOn, details }, idx) => (
           <li
             key={idx}
-            className="border border-green-200 rounded-lg p-4 flex items-center justify-between ease-in-out duration-200 hover:-translate-y-1 hover:bg-neutral-100"
+            className="border border-green-200 rounded-lg py-2 px-4 flex items-center justify-between ease-in-out duration-200 hover:-translate-y-1 hover:bg-neutral-100"
           >
-            <div className="flex flex-col">
+            <div className="flex flex-col gap-2">
               <span className="text-[0.65rem] text-primary-300 italic">
-                {Date(requestedOn)}
+                {new Date(requestedOn).toLocaleDateString()}
               </span>
-
-              <span className="text-xl text-primary-800 font-semibold capitalize">
-                {name}
-              </span>
-
-              <span className="text-sm text-primary-600">
-                For: {purpose}. click to see details
-              </span>
+              <div className="flex items-center gap-2">
+                <div className="overflow-hidden h-12 w-12 rounded-full relative">
+                  <Image
+                    src="/pp.jpg"
+                    fill
+                    className="object-cover"
+                    alt="company-img"
+                  />
+                </div>
+                <div className="flex flex-col justify-center">
+                  <span className="text-lg capitalize text-primary-800 font-semibold">
+                    {name}
+                  </span>
+                  <span className=" capitalize text-sm text-primary-800">
+                    Requested for: {purpose}
+                  </span>
+                </div>
+              </div>
             </div>
 
             <div className="flex items-center gap-2">
@@ -107,34 +121,4 @@ export default function VerificationRequests() {
       </ul>
     </div>
   );
-  // return (
-  //   <AnimatedFadeIn>
-  //     <ul className="grid grid-cols-1 gap-4 p-4">
-  //       <li className="border border-green-200 rounded-lg p-4 flex items-center justify-between ease-in-out duration-200 hover:-translate-y-1 hover:bg-neutral-100">
-  //         <div className="flex flex-col">
-  //           <span className="text-[0.65rem] text-primary-300 italic">
-  //             Date : 2081/05/01 - 10:00
-  //           </span>
-
-  //           <span className="text-xl text-primary-800 font-semibold">
-  //             Your KYC application has been approved by Nepal Rastriya Bank
-  //           </span>
-
-  //           <span className="text-sm text-primary-600">
-  //             You saved almost a day 😉
-  //           </span>
-  //         </div>
-
-  //         <div className="flex items-center gap-2">
-  //           <Button size="sm" type="tertiary">
-  //             See details
-  //           </Button>
-  //           <Button size="sm" variation="danger" type="primary">
-  //             Report an Issue
-  //           </Button>
-  //         </div>
-  //       </li>
-  //     </ul>
-  //   </AnimatedFadeIn>
-  // );
 }

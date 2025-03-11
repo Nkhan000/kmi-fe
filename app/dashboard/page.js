@@ -12,6 +12,7 @@ import NewApplication from "../_components/Dashboard/New Application/NewApplicat
 export default function Dashboard() {
   const searchParams = useSearchParams();
   const router = useRouter();
+
   const currField = searchParams.get("field");
 
   function checkCurrField(currParam) {
