@@ -85,7 +85,7 @@ export default function VerificationRequests() {
           >
             <div className="flex flex-col gap-2">
               <span className="text-[0.65rem] text-primary-300 italic">
-                {new Date(requestedOn).toLocaleDateString()}
+                Date: {new Date(requestedOn).toLocaleDateString()}
               </span>
               <div className="flex items-center gap-2">
                 <div className="overflow-hidden h-12 w-12 rounded-full relative">

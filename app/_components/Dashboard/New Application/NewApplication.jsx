@@ -1,6 +1,8 @@
 import Button from "../../Button";
 import StyledTag from "../../StyledTag";
 import { RiExpandDiagonalLine } from "react-icons/ri";
+import ProviderTemplate from "./ProviderTemplate";
+import StartApplication from "./StartApplication";
 
 export default function NewApplication() {
   const data = [
@@ -72,46 +74,12 @@ export default function NewApplication() {
           />
           <Button size="sm">Search</Button>
         </form>
-        <div className="border min-h-full"></div>
-      </div>
-
-      <div className="sticky top-0 border rounded-lg border-primary-50">
-        <div className="bg-primary-50 px-4 py-2">
-          <span className="text-primary-800 font-semibold text-xl">
-            Pending Applications
-          </span>
-        </div>
-
-        <div className="p-2 ">
-          <div className="relative rounded-md border-2 border-yellow-100 p-3 px-6 flex justify-center flex-col gap-2 hover:border-yellow-300 ease-in duration-150 group">
-            <div className="flex gap-3 items-center">
-              <div className="h-12 w-12 border shrink-0 rounded-full row-start-1 row-end-3"></div>
-              <div>
-                <span className="inline-block font-semibold text-lg text-primary-800">
-                  KYC Verification Request
-                </span>
-                <span className="inline-block text-primary-700 text-md font-semibold justify-start">
-                  Nepal Rastriya Bank
-                </span>
-              </div>
-            </div>
-            <span className="inline-block text-primary-700 text-sm font-semibold">
-              Applied on : 2081/11/22
-            </span>
-            <div className="flex items-center gap-4">
-              <span className="inline-block text-primary-700 text-sm font-semibold">
-                Status :
-              </span>
-              <StyledTag type="warning">Pending</StyledTag>
-            </div>
-            <button className="top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 absolute">
-              <svg className="h-5 w-5 flex items-center justify-center text-primary-700 ">
-                <RiExpandDiagonalLine />
-              </svg>
-            </button>
-          </div>
+        <div className="p-4 min-h-full flex flex-col gap-4">
+          <ProviderTemplate />
+          <ProviderTemplate />
         </div>
       </div>
+      <StartApplication />
     </section>
   );
 }

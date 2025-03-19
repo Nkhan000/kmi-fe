@@ -7,6 +7,7 @@ import AnimatedText from "../Animations/AnimatedText";
 import AnimatedFadeIn from "../Animations/AnimatedFadeIn";
 import Button from "../Button";
 import IndividiualSolution from "./IndividualSolutions";
+import ScrollAnimation from "./TestAnimation";
 
 function OurSolutions() {
   const data = [
@@ -36,16 +37,17 @@ function OurSolutions() {
     },
   ];
   return (
-    <section className="min-h-screen px-20 py-12 flex flex-col gap-14 bottom-[2px]">
+    <section className="min-h-screen px-20 py-12 pb-0 flex flex-col gap-14 bottom-[2px]">
       <SectionHead
         mainHead="our solutions"
         subHead="Get high qualities solutions for all of your personal requirements"
       />
-      <IndividiualSolution />
+      {/* <IndividiualSolution /> */}
+      <ScrollAnimation />
 
-      <div className="max-w-fit self-center">
+      {/* <div className="max-w-fit self-center">
         <Button>Gets Started</Button>
-      </div>
+      </div> */}
     </section>
   );
 }

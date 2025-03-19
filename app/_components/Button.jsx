@@ -1,11 +1,21 @@
+"use client";
+
 function Button({
   type = "primary",
   variation = "primary",
   size = "md",
+  handleClick,
+  isDisabled = false,
   children,
 }) {
   const textPadding =
-    size == "lg" ? "px-8 py-2" : size == "md" ? "px-6 py-2" : "p-2";
+    size == "lg"
+      ? "px-8 py-2"
+      : size == "md"
+      ? "px-6 py-2"
+      : size == "sm"
+      ? "p-2"
+      : "px-8 py-4";
 
   const bgColor =
     variation == "danger"
@@ -26,7 +36,19 @@ function Button({
     secondary: `max-w-full bg-white ease-in duration-200 ${textPadding} rounded-md text-primary-900 text-${size} font-semibold hover:bg-green-400  transition-all outline-gray-400 outline-offset-4`,
     tertiary: `max-w-full border-2 border-green-400 ease-in duration-200 ${textPadding} rounded-md text-primary-900 text-${size} font-semibold hover:bg-green-400 hover:text-primary-50 transition-all outline-gray-400 outline-offset-4`,
   };
-  return <button className={btnStyles[type]}>{children}</button>;
+  return (
+    <button
+      disabled={isDisabled}
+      onClick={handleClick}
+      className={` ${btnStyles[type]} ${
+        isDisabled
+          ? "cursor-not-allowed bg-primary-50 hover:bg-primary-50 hover:text-primary-200"
+          : "cursor-pointer"
+      }`}
+    >
+      {children}
+    </button>
+  );
 }
 
 export default Button;
