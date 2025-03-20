@@ -2,9 +2,9 @@
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-function AnimatedFadeIn({ children }) {
+function AnimatedFadeIn({ animateOnce = true, children }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.5 });
+  const isInView = useInView(ref, { once: animateOnce, amount: 0.5 });
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {

@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 
 function AnimatedText({ className, text }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const isInView = useInView(ref, { once: true, amount: 0.03 });
 
   const [isClient, setIsClient] = useState(false);
 
@@ -25,7 +25,7 @@ function AnimatedText({ className, text }) {
           key={isClient} // Forces re-render after mounting
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          transition={{ staggerChildren: 0.1 }}
+          transition={{ staggerChildren: 0.08 }}
           aria-hidden
         >
           {text.split(" ").map((char, idx) => (
