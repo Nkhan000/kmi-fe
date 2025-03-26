@@ -7,6 +7,7 @@ export default function InputDiv({ id, className = "", label, type = "text" }) {
       <input
         type={type}
         id={id}
+        name={id}
         className="border capitalize px-3 py-2 text-primary-800 rounded-lg aria-selected:border-green-300 focus:outline-green-300"
         placeholder={label}
       />

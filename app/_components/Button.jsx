@@ -40,7 +40,7 @@ function Button({
     <button
       disabled={isDisabled}
       onClick={handleClick}
-      className={` ${btnStyles[type]} ${
+      className={` capitalize ${btnStyles[type]} ${
         isDisabled
           ? "cursor-not-allowed bg-primary-50 hover:bg-primary-50 hover:text-primary-200"
           : "cursor-pointer"

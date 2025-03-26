@@ -7,12 +7,13 @@ export default function StartProfile() {
     <div className="border-2 min-w-screen min-h-[80vh] rounded-xl border-dashed border-green-300 flex items-center justify-center bg-slate-50">
       <div className="flex flex-col items-center gap-6">
         <span className="text-2xl text-primary-700 font-semibold capitalize">
-          You haven't set up your account yet 🤨
+          {/* You haven't set up your account yet 🤨 */}
+          Your application is under verification. Thank you for your pateince 😊
         </span>
         <div>
           <Modal>
             <Modal.Open opens="new-application">
-              <Button size="lg">Start Setting Up</Button>
+              <Button size="lg">See Status</Button>
             </Modal.Open>
             <Modal.Window name="new-application">
               <NewProfileForm />
