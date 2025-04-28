@@ -31,7 +31,7 @@ export default function LegalInfoForm() {
     },
   ];
   return (
-    <form className="flex flex-col gap-4 px-4">
+    <form className="flex flex-col gap-4 px-4 flex-shrink-0">
       <header className="flex flex-col gap-1">
         <span className="text-xl text-primary-600 ">
           Please upload your following documents for further verifications
@@ -69,10 +69,10 @@ export default function LegalInfoForm() {
           </div>
         ))}
       </div>
-      <div className="self-end flex items-center gap-4">
+      {/* <div className="self-end flex items-center gap-4">
         <Button>Prev</Button>
         <Button>Next</Button>
-      </div>
+      </div> */}
     </form>
   );
 }

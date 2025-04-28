@@ -5,7 +5,7 @@ import ParentOrGuardianDetails from "./ParentOrGuardianDetail";
 
 export default function GeneralInfoForm() {
   return (
-    <form className="flex flex-col gap-6">
+    <form className="flex flex-col gap-6 flex-shrink-0">
       <div className="grid grid-cols-3 gap-4">
         <InputDiv id="full-name" label="Full Name" />
         <InputDiv id="mid-name" label="Middle Name" />
@@ -84,11 +84,6 @@ export default function GeneralInfoForm() {
       <ParentOrGuardianDetails relation="mother" />
       <ParentOrGuardianDetails relation="spouse" />
       <ParentOrGuardianDetails relation="grand father" addAddress={false} />
-
-      <div className="self-end flex items-center gap-4">
-        <Button>Prev</Button>
-        <Button>Next</Button>
-      </div>
     </form>
   );
 }

@@ -2,7 +2,7 @@ import Button from "@/app/_components/Button";
 
 export default function VerifyNumAndEmail() {
   return (
-    <section className=" flex flex-col gap-6">
+    <section className=" flex flex-col gap-6 flex-shrink-0">
       <div className="py-2 px-4 flex flex-col gap-3">
         <span className="text-xl text-primary-500">
           A verification code has been sent to na*************j@gmail.com
@@ -42,10 +42,10 @@ export default function VerifyNumAndEmail() {
         </button>
       </div>
 
-      <div className="self-end flex items-center gap-4">
+      {/* <div className="self-end flex items-center gap-4">
         <Button>Prev</Button>
         <Button>Next</Button>
-      </div>
+      </div> */}
     </section>
   );
 }

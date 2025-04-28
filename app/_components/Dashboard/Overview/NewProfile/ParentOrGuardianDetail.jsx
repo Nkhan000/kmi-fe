@@ -12,11 +12,11 @@ export default function ParentOrGuardianDetails({
       </span>
       <div className="self-stretch flex-col flex gap-4">
         <div className="grid grid-cols-3 gap-3">
-          <InputDiv id="f-first-name" label="First Name" />
-          <InputDiv id="f-mid-name" label="Middle Name" />
-          <InputDiv id="f-last-name" label="Last Name" />
-          <InputDiv id="f-nationality" label="nationality" />
-          <InputDiv id="f-citizenship" label="citizenship number" />
+          <InputDiv id={`${relation}-first-name`} label="First Name" />
+          <InputDiv id={`${relation}-mid-name`} label="Middle Name" />
+          <InputDiv id={`${relation}-last-name`} label="Last Name" />
+          <InputDiv id={`${relation}-nationality`} label="nationality" />
+          <InputDiv id={`${relation}-citizenship`} label="citizenship number" />
           <StyledOption
             oreintation="col"
             name="Proffession"
